@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Assignment4</string>
+    <string name="emptyspace"> </string>
+    <string name="submit">Submit</string>
+    <string name="restart">Restart</string>
+    <string name="clear">Clear</string>
+    <string name="alphabet">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="add_word">Add Word</string>
+    <string name="back">Back</string>
+    <string name="word_hint">Add Word</string>
+    <string name="you_lose">You Lose!!!</string>
+    <string name="you_win">You Win!!!</string>
+</resources>
