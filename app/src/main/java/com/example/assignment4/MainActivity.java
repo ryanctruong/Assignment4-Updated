@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
     static final int GRID_ROWS = 5;
     static final int SCORE_TO_WIN = 10;
     int activeRowIndex;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseRef;
+    FirebaseDatabase fb;
+    DatabaseReference ref;
     LinkedList<String> listOfWords = new LinkedList<>();
     Random randomGenerator = new Random();
 
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         clearButton.setOnClickListener(view -> clearCurrentGame());
         switchActivityButton.setOnClickListener(view -> switchToWordAddingActivity());
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseRef = firebaseDatabase.getReference("words");
+        fb = FirebaseDatabase.getInstance();
+        ref = fb.getReference("words");
         retrieveWordsFromDatabase();
 
         setupGame();
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void retrieveWordsFromDatabase() {
-        databaseRef.get().addOnCompleteListener(task -> {
+        ref.get().addOnCompleteListener(task -> {
             if (!task.isSuccessful()) {
                 Log.e("firebase", "Error getting data", task.getException());
             } else {
